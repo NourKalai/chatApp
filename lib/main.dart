@@ -12,14 +12,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-       
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSwatch()
+            .copyWith(secondary: const Color.fromARGB(255, 239, 239, 235)),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color.fromARGB(225, 140, 185, 4),
+        ),
+        primaryColor: const Color.fromARGB(197, 122, 242, 23),
       ),
-      home:  MyHomePage(title: 'Flutter Demo Home Page'),
+      home: SplashScreen(),
     );
   }
 }
-
-
