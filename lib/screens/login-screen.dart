@@ -1,3 +1,4 @@
+import 'package:chatapp/screens/home-screen.dart';
 import 'package:chatapp/screens/sign-up-screen.dart';
 
 import 'package:flutter/material.dart';
@@ -165,10 +166,10 @@ class StartState extends State<LoginScreen> {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Processing Data')),
                   );
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => HomeScreen()),
-                  // );
+                   Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                  );
                 }
               },
               child: Container(
@@ -191,6 +192,7 @@ class StartState extends State<LoginScreen> {
                   ],
                 ),
                 child: const Text(
+
                   "LOGIN",
                   style: TextStyle(color: Colors.white),
                 ),
