@@ -1,10 +1,11 @@
-// ignore_for_file: prefer_const_constructors
+// // ignore_for_file: prefer_const_constructors
 
 import 'package:chatapp/const/constant.dart';
-import 'package:chatapp/model/chatModel.dart';
-import 'package:chatapp/widgets/conversation_Screen.dart';
-import 'package:flutter/material.dart';
-
+ import 'package:chatapp/model/chatModel.dart';
+import 'package:chatapp/model/messageModel.dart';
+import 'package:chatapp/widgets/bottom_Nav_Send.dart';
+ import 'package:chatapp/widgets/conversation_Screen.dart';
+ import 'package:flutter/material.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({

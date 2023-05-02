@@ -4,6 +4,9 @@ import 'package:chatapp/widgets/bottom_Nav_Send.dart';
 import 'package:chatapp/widgets/messageBox.dart';
 import 'package:flutter/material.dart';
 
+import '../VideoCall.dart';
+import '../audioCall.dart';
+
 class ConversationScreen extends StatelessWidget {
 
   final String username, profilePic,time;
@@ -87,12 +90,22 @@ class ConversationScreen extends StatelessWidget {
            ]),
            actions: [
             IconButton(
-             onPressed: (){}, 
+             onPressed: (){
+              Navigator.push(
+context,
+MaterialPageRoute(
+builder: (context) => VideoScreen()));
+             }, 
              icon: Icon(Icons.videocam,size: 20),
              color: mainColor,
             ),
             IconButton(
-              onPressed: (){}, 
+              onPressed: (){
+                Navigator.push(
+context,
+MaterialPageRoute(
+builder: (context) => AudioCallScreen()));
+              }, 
               icon: Icon(Icons.call,size: 20),
               color: mainColor,
             ),
@@ -107,22 +120,22 @@ class ConversationScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Container(
           color: Colors.white,
-          child: ListView(
-            children: List.generate(
-                //let's make a message model
-                messages.length,
-                (index){
-                  return MessageBox(
-                    isMe: messages[index][ 'isMe'],
-                    message: messages[index]['message'],
+        //   child: ListView(
+        //     children: List.generate(
+        //         //let's make a message model
+        //         messages.length,
+        //       //   (index){
+        //       //     return MessageBox(
+        //       //       isMe: messages[index][ 'isMe'],
+        //       //       message: messages[index]['message'],
 
-              );
-                }
-          ),
-        ),
+        //       // );
+        //       //   }
+        //   ),
+        // ),
       ),
       ),
-      bottomSheet: BottomSendNavigation(),
+     // bottomSheet: BottomSendNavigation(),
     );
   }
 }
