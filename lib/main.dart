@@ -1,3 +1,5 @@
+import 'package:chatapp/HomePage.dart';
+import 'package:chatapp/screens/setting-screen.dart';
 import 'package:chatapp/screens/splash-screen.dart';
 import 'package:flutter/material.dart';
 

@@ -6,7 +6,6 @@ import '../const/validators.dart';
 
 class LoginScreen extends StatefulWidget {
   var validator;
-  bool passToogle = true;
 
   LoginScreen({super.key});
   @override
@@ -15,6 +14,11 @@ class LoginScreen extends StatefulWidget {
 
 class StartState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
+  late bool motDePass ;
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +26,7 @@ class StartState extends State<LoginScreen> {
   }
 
   Widget initWidget() {
+    bool motDePass;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -93,7 +98,7 @@ class StartState extends State<LoginScreen> {
                         }
                       },
                       //  controller: emailController,
-                      cursorColor: const Color.fromARGB(255, 19, 155, 33),
+                      cursorColor: Color.fromARGB(255, 163, 206, 23),
                       decoration: const InputDecoration(
                         icon: Icon(
                           Icons.email,
@@ -121,20 +126,19 @@ class StartState extends State<LoginScreen> {
                       ],
                     ),
                     child: TextFormField(
+                      validator: (val) => val!.length < 6
+                          ? 'Entrez un mot de passe avec un 6 caractere ou plus '
+                              ' des caracteres'
+                          : null,
+                      onChanged: (val) => motDePass = val as bool,
                       obscureText: true,
-                      cursorColor: const Color.fromARGB(255, 19, 155, 33),
+                      cursorColor: Color.fromARGB(255, 163, 206, 23),
                       decoration: const InputDecoration(
-                        focusColor: Color.fromARGB(255, 17, 153, 55),
+                        focusColor: Color.fromARGB(255, 163, 206, 23),
+                        suffixIcon: Icon(Icons.remove_red_eye_sharp,
+                            color: Color.fromARGB(255, 163, 206, 23)),
                         icon: Icon(Icons.vpn_key,
                             color: Color.fromARGB(255, 163, 206, 23)),
-                        //    suffixIcon:InkWell(
-                        // //     onTap(){
-                        // //      setState((){
-                        // //          passToggle=!passToggle;
-                        // //      }
-                        // //       );
-                        ////   },
-                        ////    child:Icon(passToogle? Icons.Visibility:Icons.Visibility_off),
                         hintText: "Enter Password",
                         enabledBorder: InputBorder.none,
                         focusedBorder: InputBorder.none,
@@ -166,7 +170,7 @@ class StartState extends State<LoginScreen> {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Processing Data')),
                   );
-                   Navigator.push(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => HomeScreen()),
                   );
@@ -192,7 +196,6 @@ class StartState extends State<LoginScreen> {
                   ],
                 ),
                 child: const Text(
-
                   "LOGIN",
                   style: TextStyle(color: Colors.white),
                 ),

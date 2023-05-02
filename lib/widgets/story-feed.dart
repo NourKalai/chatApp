@@ -1,9 +1,11 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last
+// // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:chatapp/const/constant.dart';
 import 'package:chatapp/model/chatModel.dart';
 import 'package:flutter/material.dart';
 
+import '../model/messageModel.dart';
+import 'bottom_Nav_Send.dart';
 
 class StoryScreen extends StatelessWidget {
   const StoryScreen({
