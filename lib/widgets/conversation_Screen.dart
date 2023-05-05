@@ -4,8 +4,7 @@ import 'package:chatapp/widgets/bottom_Nav_Send.dart';
 import 'package:chatapp/widgets/messageBox.dart';
 import 'package:flutter/material.dart';
 
-import '../VideoCall.dart';
-import '../audioCall.dart';
+
 
 class ConversationScreen extends StatelessWidget {
 
@@ -37,7 +36,8 @@ class ConversationScreen extends StatelessWidget {
           ),
           title: Row(
             children: [
-              Container(
+              TextButton(
+                child:  Container(
                 width: 40,
                 height: 40,
                 decoration: BoxDecoration(
@@ -47,7 +47,14 @@ class ConversationScreen extends StatelessWidget {
                    fit: BoxFit.cover, 
                   ),
                 ),
-              ),
+              ),       
+                 onPressed: (){
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfilScreen(   username:username,
+ profilePic: profilePic,)
+                 )
+                   );
+                 },
+            ),
               const SizedBox(width: 10,),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,8 +78,8 @@ class ConversationScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                   SizedBox(width: 3,),
-                   Text("Active Now",
+                   const SizedBox(width: 3,),
+                   const Text("Active Now",
                     style: TextStyle(
                      color: Colors.grey,
                      fontSize: 12,),

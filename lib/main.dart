@@ -1,5 +1,4 @@
-import 'package:chatapp/HomePage.dart';
-import 'package:chatapp/screens/setting-screen.dart';
+
 import 'package:chatapp/screens/splash-screen.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
         ),
         primaryColor: const Color.fromARGB(197, 122, 242, 23),
       ),
-      home: SplashScreen(),
+      home: HomeScreen(),
     );
   }
 }

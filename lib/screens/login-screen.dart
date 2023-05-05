@@ -95,6 +95,7 @@ class StartState extends State<LoginScreen> {
                           return "invalide";
                         } else {
                           return null;
+      
                         }
                       },
                       //  controller: emailController,
@@ -107,6 +108,7 @@ class StartState extends State<LoginScreen> {
                         hintText: "Enter Email",
                         enabledBorder: InputBorder.none,
                         focusedBorder: InputBorder.none,
+                        
                       ),
                     ),
                   ),
